@@ -1,8 +1,7 @@
 /* Write your T-SQL query statement below */
+select a.product_name ,sum(b.unit) as unit from Products as a
+join Orders as b
+on a.product_id = b.product_id and order_date  between '2020-02-01' and '2020-02-29'
 
-SELECT product_name ,SUM(unit) AS unit
-FROM products p INNER JOIN  orders o 
-ON p.product_id =o.product_id
-WHERE order_date BETWEEN '2020-02-01' AND '2020-02-29'
-GROUP BY p.product_id,p.product_name 
-HAVING SUM(unit)>=100
+group by a.product_id
+having sum(b.unit) >= 100
