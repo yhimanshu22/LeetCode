@@ -9,7 +9,6 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        
         ListNode* slow = head;
         ListNode* fast = head;
 
@@ -19,7 +18,6 @@ public:
 
             if(slow == fast)return true;
         }
-
         return false;
 
     }
